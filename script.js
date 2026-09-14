@@ -48,6 +48,7 @@ export const showItems = async function(){
   itemsToDo.appendChild(newPar3);
   itemsToDo.appendChild(document.createElement("br"));
   itemsToDo.appendChild(newPar);
+  itemsToDo.appendChild(document.createElement("br"));itemsToDo.appendChild(document.createElement("br"));
   
 }
 );
