@@ -40,9 +40,15 @@ export const showItems = async function(){
   newPar2.htmlFor = item.id;
   }
 
-  itemsToDo.appendChild(newPar);
-  itemsToDo.appendChild(document.createElement("br"));
+  const newPar3 = document.createElement("label");
+  newPar3.innerHTML = ": ";
+  newPar3.htmlFor = item.id;
+
   itemsToDo.appendChild(newPar2);
+  itemsToDo.appendChild(newPar3);
+  itemsToDo.appendChild(document.createElement("br"));
+  itemsToDo.appendChild(newPar);
+  
 }
 );
 };
