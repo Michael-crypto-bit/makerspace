@@ -70,11 +70,15 @@ export const showItems = async function(){
 
   const newPar6 = document.createElement("label");
   const newPar7 = document.createElement("label");
-  if(item.data().user != undefined){
+  if(item.data().user != ""){
   newPar6.innerHTML = item.data().user;
   newPar6.htmlFor = item.id;
   newPar7.innerHTML = "<br>user: ";
   newPar7.htmlFor = item.id;
+  }
+  else{
+    newPar6.innerHTML = "<strong><br>unclaimed</strong>";
+    newPar6.htmlFor = item.id;
   }
 
   itemsToDo.appendChild(newPar2);
