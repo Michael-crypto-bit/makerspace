@@ -6,8 +6,10 @@
     <title>Admin Login</title>
 </head>
 <script type="module">
-    import {addItem} from './script.js';
+    import {addItem, showItems} from './script.js';
     window.addItem = addItem
+    window.showItems = showItems
+    showItems()
   </script>
 <style>
         .btn-nav {
@@ -33,6 +35,8 @@
 <br>
 <br>
 <h3>add task:</h3><input type="text" id="input"><button onclick="addItem(document.getElementById('input').value)">add task</button>
+<h3>current tasks</h3>
+<p id="output"></p>
     </center>
 </body>
 </html>

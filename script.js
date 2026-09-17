@@ -122,4 +122,20 @@ export const addItem = async function(item){
 });
 // console.log("timesetamp: "+serverTimestamp());
   document.getElementById("input").value = "";
+  showItems();
 }
+
+
+
+window.onload = function() {
+
+  if(localStorage.getItem('admin')!=true){
+    localStorage.setItem('admin') = true;
+  }
+
+  if (window.location.href.includes("adminLogin.html")) {
+    if(localStorage.getItem('admin')!=true){
+    window.location.href = "login.html";
+    }
+}
+};
