@@ -35,7 +35,7 @@ export const showItems = async function(){
   newPar.htmlFor = item.id;
   const newPar2 = document.createElement("label");
   if(item.data().category != undefined){
-  newPar2.innerHTML = item.data().category;
+  newPar2.innerHTML = "<strong>"+item.data().category;
   newPar2.htmlFor = item.id;
   }
 
@@ -107,13 +107,14 @@ export function punch(){
 }
 
 export const addItem = async function(item){
+  const dropdown = document.getElementById("dropdown").value;
   const docRef = await addDoc(collection(db, "makerspace"), {
     // if(document.getElementById("newItem").value == ""){break: any}
     name: item,
     completed: false,
     user: "",
     inProgress: false,
-    category: "McAvoy"
+    category: dropdown
   });
   console.log("document written with ID: ",docRef.id);
   const updateTimestamp = await updateDoc(docRef, {
