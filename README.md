@@ -6,6 +6,6 @@ if you take the api keys, good luck you have something that is basically worthle
 
 
 todo:
-get login working with admin denial
-create showItems2 for admin page
+get login working with admin denial                                                                                                                                  
+create showItems2 for admin page                                                                                                                                     
 punch in system
