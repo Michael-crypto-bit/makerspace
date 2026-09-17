@@ -31,11 +31,29 @@
 <a href="home.html" class="btn-nav">Home</a>
       <!-- type must be "module": https://www.w3schools.com/js/js_modules.asp#:~:text=JavaScript%20modules%20allow%20you%20to,in%20the%20tag.-->  
 
-<div class="card">
-  <img src="Student.jpg" alt="Avatar" style="width:50%">
-  <div class="container">
-    <h4><b>Student Login</b></h4>
-  </div>
+
+<button id="showLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
+  <h4><b>Student Login</b></h4>
+    <img src="Student.jpg" alt="Show Form" width="150" height="50">
+        <div class="container">
+</button>
+    
+      <form id="studentLoginForm" margin-top: 20px; action= "/submit" method="POST">
+        <label for="uname"><b>Username:</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password:</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+      </div>
+    </form>
+  
+</div>
 </div>
 
 <div class="card2">
