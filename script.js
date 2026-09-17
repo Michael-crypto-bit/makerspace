@@ -101,3 +101,21 @@ export function punch(){
     //     document.getElementById("status").innerText = "not punched in";
     // }
 }
+
+export const addItem = async function(item){
+  const docRef = await addDoc(collection(db, "makerspace"), {
+    // if(document.getElementById("newItem").value == ""){break: any}
+    name: item,
+    completed: false,
+    user: "",
+    inProgress: false,
+    category: "McAvoy"
+  });
+  console.log("document written with ID: ",docRef.id);
+  const updateTimestamp = await updateDoc(docRef, {
+    timestamp: serverTimestamp()
+    
+});
+// console.log("timesetamp: "+serverTimestamp());
+  document.getElementById("input").value = "";
+}

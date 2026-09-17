@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
 </head>
+<script type="module">
+    import {addItem} from './script.js';
+    window.addItem = addItem
+  </script>
 <style>
         .btn-nav {
             display: inline-block;
@@ -21,13 +25,14 @@
         }
 </style>
 <body><center>
-    <h1>Admin Login</h1>
+    
 <a href="login.html" class="btn-nav">Login</a>
-      <!-- type must be "module": https://www.w3schools.com/js/js_modules.asp#:~:text=JavaScript%20modules%20allow%20you%20to,in%20the%20tag.-->  
-
 <a href="home.html" class="btn-nav">Home</a>
-      <!-- type must be "module": https://www.w3schools.com/js/js_modules.asp#:~:text=JavaScript%20modules%20allow%20you%20to,in%20the%20tag.-->  
+<h1>Admin Login</h1>
+<br>
+<br>
+<br>
+<h3>add task:</h3><input type="text" id="input"><button onclick="addItem(document.getElementById('input').value)">add task</button>
     </center>
 </body>
-<script src="script.js"></script>
 </html>
