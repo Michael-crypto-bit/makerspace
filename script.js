@@ -52,21 +52,20 @@ export const showItems = async function(){
   newPar5.htmlFor = item.id;
   }
   const checkbox = document.createElement("button");
-  if(item.data().inProgress == false){
-
-  checkbox.innerHTML = "claim";
-  checkbox.onclick = async function(){
-    await updateDoc(doc(db, "makerspace", item.id), {inProgress: true, user: "Michael"});
-    showItems();
-  };
+  if(item.data().inProgress == false || window.location.href.includes("adminLogin.html")){
+      checkbox.innerHTML = "complete";
+    checkbox.onclick = async function(){
+      await updateDoc(doc(db, "makerspace", item.id), {completed: true, inProgress: false, user: "Michael"});
+      showItems();
     }
-  else{
-  checkbox.innerHTML = "complete";
-  checkbox.onclick = async function(){
-    await updateDoc(doc(db, "makerspace", item.id), {completed: true, inProgress: false, user: "Michael"});
-    showItems();
-  };
   }
+  else{
+    checkbox.innerHTML = "claim";
+    checkbox.onclick = async function(){
+      await updateDoc(doc(db, "makerspace", item.id), {inProgress: true, user: "Michael"});
+      showItems();
+    };
+    }
 
   const newPar6 = document.createElement("label");
   const newPar7 = document.createElement("label");
