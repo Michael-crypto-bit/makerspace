@@ -32,7 +32,7 @@
       <!-- type must be "module": https://www.w3schools.com/js/js_modules.asp#:~:text=JavaScript%20modules%20allow%20you%20to,in%20the%20tag.-->  
 
 
-<button id="showLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
+<button onclick=showWindow() id="showLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
   <h4><b>Student Login</b></h4>
     <img src="Student.jpg" alt="Show Form" width="150" height="50">
         <div class="container">
@@ -49,23 +49,53 @@
       </div>
 
       <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
+        <button onclick=showWindow() type="button" class="cancelbtn">Cancel</button>
       </div>
     </form>
   
 </div>
 </div>
 
-<div class="card2">
+<button onclick=showWindow2() id="showAdminLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
+  <h4><b>Admin Login</b></h4>
+    <img src="Teacher2.png" alt="Show Form" width="150" height="50">
+        <div class="container">
+</button>
+    
+      <form id="adminLoginForm" margin-top: 20px; action= "/submit" method="POST">
+        <label for="uname"><b>Username:</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password:</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button onclick=showWindow2() type="button" class="cancelbtn">Cancel</button>
+      </div>
+    </form>
+  
+</div>
+</div>
+
+
+<!-- <div class="card2">
   <img src="Teacher2.png" alt="Avatar" style="width:50%">
   <div class="container">
     <h4><b>Admin Login</b></h4>
   </div>
-</div>
+</div> -->
 
 
 
 </center>
 </body>
-<script src="script.js"></script>
-</html>
+<script type="module" src="script.js"></script>
+  <script type="module">
+    import {showWindow, showWindow2} from './script.js';
+    window.showWindow = showWindow;
+    window.showWindow2 = showWindow2;
+  </script>
+  </html>
