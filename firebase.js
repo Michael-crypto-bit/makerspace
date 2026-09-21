@@ -35,20 +35,16 @@ export const showItems = async function(){
   newPar.htmlFor = item.id;
   const newPar2 = document.createElement("label");
   if(item.data().category != undefined){
-  newPar2.innerHTML = "<strong>"+item.data().category;
+  newPar2.innerHTML = "<h3><strong>"+item.data().category+":";
   newPar2.htmlFor = item.id;
   }
-
-  const newPar3 = document.createElement("label");
-  newPar3.innerHTML = ": ";
-  newPar3.htmlFor = item.id;
 
   const newPar4 = document.createElement("label");
   const newPar5 = document.createElement("label");
   if(item.data().inProgress != undefined){
   newPar4.innerHTML = item.data().inProgress;
   newPar4.htmlFor = item.id;
-  newPar5.innerHTML = "<br><br>in progress: ";
+  newPar5.innerHTML = "<br><br><strong>in progress: ";
   newPar5.htmlFor = item.id;
   }
   const checkbox = document.createElement("button");
@@ -68,20 +64,21 @@ export const showItems = async function(){
     }
 
   const newPar6 = document.createElement("label");
-  const newPar7 = document.createElement("label");
   if(item.data().user != ""){
-  newPar6.innerHTML = item.data().user;
+  newPar6.innerHTML = "<br><strong>claimer: </strong>"+item.data().user;
   newPar6.htmlFor = item.id;
-  newPar7.innerHTML = "<br>user: ";
-  newPar7.htmlFor = item.id;
   }
   else{
     newPar6.innerHTML = "<strong><br>unclaimed</strong>";
     newPar6.htmlFor = item.id;
   }
+  const newPar7 = document.createElement("label");
+  if(item.data().notes !=""){
+    newPar7.innerHTML = "<br><br><strong> comments by claimer:</strong> <br>"+item.data().notes+"<br>";
+    newPar7.htmlFor = item.id
+  }
 
   itemsToDo.appendChild(newPar2);
-  itemsToDo.appendChild(newPar3);
   itemsToDo.appendChild(document.createElement("br"));
   itemsToDo.appendChild(newPar);
   itemsToDo.appendChild(checkbox);
