@@ -1,101 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login</title>
-    <link rel="stylesheet" href="style.css">
-<style>
-        .btn-nav {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-        }
-        .btn-nav:hover {
-            background-color: #0056b3;
-        }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .btn-nav {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+    }
+    .btn-nav:hover {
+        background-color: #0056b3;
+    }
+  </style>
 <center><h1>User Login</h1></center>
 <head>
 
 <body><center>
 
-    <a href="adminLogin.html" class="btn-nav">Admin Login</a>
+  <a href="adminLogin.html" class="btn-nav">Admin Login</a>
+  <!-- type must be "module": https://www.w3schools.com/js/js_modules.asp#:~:text=JavaScript%20modules%20allow%20you%20to,in%20the%20tag.-->  
+
+  <a href="home.html" class="btn-nav">Home</a>
       <!-- type must be "module": https://www.w3schools.com/js/js_modules.asp#:~:text=JavaScript%20modules%20allow%20you%20to,in%20the%20tag.-->  
 
-<a href="home.html" class="btn-nav">Home</a>
-      <!-- type must be "module": https://www.w3schools.com/js/js_modules.asp#:~:text=JavaScript%20modules%20allow%20you%20to,in%20the%20tag.-->  
 
-
-<button onclick=showWindow() id="showLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
-  <h4><b>Student Login</b></h4>
+  <!-- Student Manager Login Button -->
+  <button onclick=showStudentWindow() id="showLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
+    <h4><b>Student Manager Login</b></h4>
     <img src="Student.jpg" alt="Show Form" width="150" height="50">
-        <div class="container">
-</button>
-    
-      <form id="studentLoginForm" margin-top: 20px; action= "/submit" method="POST">
-        <label for="uname"><b>Username:</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
-
-        <label for="psw"><b>Password:</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit">Login</button>
-      </div>
-
-      <div class="container" style="background-color:#f1f1f1">
-        <button onclick=showWindow() type="button" class="cancelbtn">Cancel</button>
-      </div>
-    </form>
-  
-</div>
-</div>
-
-<button onclick=showWindow2() id="showAdminLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
-  <h4><b>Admin Login</b></h4>
-    <img src="Teacher2.png" alt="Show Form" width="150" height="50">
-        <div class="container">
-</button>
-    
-      <form id="adminLoginForm" margin-top: 20px; action= "/submit" method="POST">
-        <label for="uname"><b>Username:</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
-
-        <label for="psw"><b>Password:</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit">Login</button>
-      </div>
-
-      <div class="container" style="background-color:#f1f1f1">
-        <button onclick=showWindow2() type="button" class="cancelbtn">Cancel</button>
-      </div>
-    </form>
-  
-</div>
-</div>
-
-
-<!-- <div class="card2">
-  <img src="Teacher2.png" alt="Avatar" style="width:50%">
-  <div class="container">
-    <h4><b>Admin Login</b></h4>
+  </button>
+  <!-- Pop up box for student manager login -->
+  <div id="studentLoginForm" margin-top: 20px;>
+      <label for="uname"><b>Student Email:</b></label>
+      <input id="studentEmail" type="text" placeholder="Enter Email" required>
+      <label for="psw"><b>Password:</b></label>
+      <input id="password" type="password" placeholder="Enter Password" required>
+      <button onclick=studentSignIn() type="submit" cursor: pointer;>Login</button>
+    <div class="container" style="background-color:#f1f1f1">
+      <button onclick=showStudentWindow() type="button" class="cancelbtn">Cancel</button>
+    </div>
   </div>
-</div> -->
+
+    
+  
+
+  <!-- Admin Login Button -->
+  <button onclick=showAdminWindow() id="showAdminLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
+    <h4><b>Admin Login</b></h4>
+    <img src="Teacher2.png" alt="Show Form" width="150" height="50">
+  </button>
+  <!-- Pop up box for admin  login -->
+  <div id="adminLoginForm" margin-top: 20px;>
+      <label for="adminEmail"><b>Admin Email:</b></label>
+      <input id="adminEmail" type="text" placeholder="Enter Email" required>
+      <label for="psw"><b>Password:</b></label>
+      <input id="password" type="password" placeholder="Enter Password" required>
+      <button onclick=adminSignIn() type="submit" cursor: pointer;>Login</button>
+    <div class="container" style="background-color:#f1f1f1">
+      <button onclick=showAdminWindow() type="button" class="cancelbtn">Cancel</button>
+    </div>
+  </div>
 
 
 
 </center>
 </body>
-<script type="module" src="script.js"></script>
+<script type="module" src="script2.js"></script>
   <script type="module">
-    import {showWindow, showWindow2} from './script.js';
-    window.showWindow = showWindow;
-    window.showWindow2 = showWindow2;
+    import {showStudentWindow, showAdminWindow, studentSignIn, adminSignIn} from './script2.js';
+    window.showStudentWindow = showStudentWindow;
+    window.showAdminWindow = showAdminWindow;
+    window.studentSignIn = studentSignIn;
+    window.adminSignIn = adminSignIn;
   </script>
   </html>
