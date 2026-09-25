@@ -3,25 +3,19 @@ body{
     color: black;
 }
 
-
-.card2 {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px; 
-}
-.card2:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
 img {
-  border-radius: 5px;
+
+  /* Step 1: Define your square size */
+  width: 300px;
+  height: 300px;
+
+  border-radius: 8px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .container {
   padding: 2px 16px;
 } 
-
 
 #showLoginForm {
     background: none;
@@ -42,10 +36,10 @@ img {
     display: none; 
     margin-top: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
     border-radius: 8px;
     width: 300px;
-    background-color: #f9f9f9;
+    background-color: #800000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -74,6 +68,29 @@ img {
     background-color: #f9f9f9;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  z-index: 999; 
+  flex-direction: column;
+  position: relative;
+}
+
+.flex-container {
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+}
+
+
 
 
 
