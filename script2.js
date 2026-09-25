@@ -2,11 +2,10 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
 // TODO: import libraries for Cloud Firestore Database
 // https://firebase.google.com/docs/firestore
-import { arrayRemove, serverTimestamp, deleteDoc, where, query, getFirestore, collection, addDoc, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+import {arrayRemove, serverTimestamp, deleteDoc, where, query, getFirestore, collection, addDoc, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 import {  getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 
 // Your web app's Firebase configuration
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyCinc3NEqDVIxyM4fJ7P8CRo4xMAc1IaXg",
@@ -25,13 +24,25 @@ const auth = getAuth(app);
 
 export const adminSignIn = async function(){
     const adminEmail = document.getElementById('adminEmail').value;
-    const password = document.getElementById('password').value;
+    const password = document.getElementById('aPassword').value;
 
-    auth.signInWithEmailAndPassword(adminEmail, password)
+    signInWithEmailAndPassword(auth, adminEmail, password)
         .then((userCredential) => {
             const user = userCredential.user;
             console.log('Signed in as:', user.email);
-            
+            const incompleteQuery = query(collection(db, "users"));
+            const incompleteSnapshot = getDocs(incompleteQuery);
+                console.warn("firebase successfully read"); 
+            incompleteSnapshot.forEach((item) => {
+            if(userCredential.uid == item.data().uid){
+                if(item.data().admin == true){
+                    localStorage.setItem('admin', true);
+                    window.location.href = 'adminLogin.html';
+                }
+                else{
+                    window.location.href = 'login.html';
+                }
+            }});
         })
         .catch((error) => {
             console.error('Sign in error:', error.message);
@@ -40,12 +51,14 @@ export const adminSignIn = async function(){
 
 export const studentSignIn = async function(){
     const studentEmail = document.getElementById('studentEmail').value;
-    const password = document.getElementById('password').value;
+    const password = document.getElementById('sPassword').value;
 
-    auth.signInWithEmailAndPassword(studentEmail, password)
+    signInWithEmailAndPassword(auth, studentEmail, password)
         .then((userCredential) => {
             const user = userCredential.user;
             console.log('Signed in as:', user.email);
+            localStorage.setItem('admin', false);
+            window.location.href = 'home.html';
         })
         .catch((error) => {
             console.error('Sign in error:', error.message);
@@ -73,6 +86,3 @@ export const showAdminWindow = async function(){
       form.style.display = 'none';
   }
 };
-
-
-
