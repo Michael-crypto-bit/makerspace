@@ -1,13 +1,11 @@
 
 window.onload = function() {
 
-  if(localStorage.getItem('admin')!=true){
-    localStorage.setItem('admin') = true;
-  }
-
+  console.log("hi27");
   if (window.location.href.includes("adminLogin.html")) {
-    if(localStorage.getItem('admin')!=true){
-    window.location.href = "login.html";
+    console.log("jfnbjke"+localStorage.getItem('admin'));
+    if(localStorage.getItem('admin')!="true"){
+      window.location.href = "login.html";
     }
 }
 };
