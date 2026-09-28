@@ -26,7 +26,7 @@ export const adminSignIn = async function(){
     const incompleteQuery = query(collection(db, "users"));
     const incompleteSnapshot = await getDocs(incompleteQuery);
     const adminEmail = document.getElementById('adminEmail').value;
-    const password = document.getElementById('aPassword').value;
+    const password = document.getElementById('password').value;
 
     signInWithEmailAndPassword(auth, adminEmail, password)
         .then((userCredential) => {
