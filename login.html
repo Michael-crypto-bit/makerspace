@@ -20,7 +20,7 @@
         background-color: #0056b3;
     }
   </style>
-<center><header>User Login</header></center>
+<center><h1>User Login</h1></center>
 <head>
 
 <body><center>
@@ -31,46 +31,44 @@
   <a href="home.html" class="btn-nav">Home</a>
       <!-- type must be "module": https://www.w3schools.com/js/js_modules.asp#:~:text=JavaScript%20modules%20allow%20you%20to,in%20the%20tag.-->  
 
-  <div class="flex-container">
-    <div class="form-container">
-      <!-- Student Manager Login Button -->
-      <button onclick=showStudentWindow() id="showLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
-        <h4><b>Student Manager Login</b></h4>
-        <img src="STABStudent.jpg" alt="Show Form" width="150" height="50">
-      </button>
-      <!-- Pop up box for student manager login -->
-      <div id="studentLoginForm" margin-top: 20px;>
-          <label for="uname"><b>Student Email:</b></label>
-          <input id="studentEmail" type="text" placeholder="Enter Email" required>
-          <label for="psw"><b>Password:</b></label>
-          <input id="password" type="password" placeholder="Enter Password" required>
-          <br>
-          <button onclick=studentSignIn() type="submit" cursor: pointer;>Login</button>
-          <button onclick=showStudentWindow() type="button" class="cancelbtn">Cancel</button>
-    </div>
 
-      
-    
-    <div class="flex-container">
-      <div class="form-container">
-        <!-- Admin Login Button -->
-        <button onclick=showAdminWindow() id="showAdminLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
-          <h4><b>Admin Login</b></h4>
-          <img src="STABTeacher.jpg" alt="Show Form" width="150" height="50">
-        </button>
-        <!-- Pop up box for admin  login -->
-        <div id="adminLoginForm" margin-top: 20px;>
-            <label for="adminEmail"><b>Admin Email:</b></label>
-            <input id="adminEmail" type="text" placeholder="Enter Email" required>
-            <label for="psw"><b>Password:</b></label>
-            <input id="password" type="password" placeholder="Enter Password" required>
-            <br>
-            <button onclick=adminSignIn() type="submit" cursor: pointer;>Login</button>
-            <button onclick=showAdminWindow() type="button" class="cancelbtn">Cancel</button>
-          </div>
-      </div>
+  <!-- Student Manager Login Button -->
+  <button onclick=showStudentWindow() id="showLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
+    <h4><b>Student Manager Login</b></h4>
+    <img src="Student.jpg" alt="Show Form" width="150" height="50">
+  </button>
+  <!-- Pop up box for student manager login -->
+  <div id="studentLoginForm" margin-top: 20px;>
+      <label for="uname"><b>Student Email:</b></label>
+      <input id="studentEmail" type="text" placeholder="Enter Email" required>
+      <label for="psw"><b>Password:</b></label>
+      <input id="sPassword" type="password" placeholder="Enter Password" required>
+      <button onclick=studentSignIn() type="submit" cursor: pointer;>Login</button>
+    <div class="container" style="background-color:#f1f1f1">
+      <button onclick=showStudentWindow() type="button" class="cancelbtn">Cancel</button>
     </div>
   </div>
+
+    
+  
+
+  <!-- Admin Login Button -->
+  <button onclick=showAdminWindow() id="showAdminLoginForm" style="background: none; border: none; padding: 0; cursor: pointer;">
+    <h4><b>Admin Login</b></h4>
+    <img src="Teacher2.png" alt="Show Form" width="150" height="50">
+  </button>
+  <!-- Pop up box for admin  login -->
+  <div id="adminLoginForm" margin-top: 20px;>
+      <label for="adminEmail"><b>Admin Email:</b></label>
+      <input id="adminEmail" type="text" placeholder="Enter Email" required>
+      <label for="psw"><b>Password:</b></label>
+      <input id="aPassword" type="password" placeholder="Enter Password" required>
+      <button onclick=adminSignIn() type="submit" cursor: pointer;>Login</button>
+    <div class="container" style="background-color:#f1f1f1">
+      <button onclick=showAdminWindow() type="button" class="cancelbtn">Cancel</button>
+    </div>
+  </div>
+
 
 
 </center>
