@@ -1,14 +1,21 @@
+header{
+    background-color: maroon;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: 25px;
+    margin-bottom: 2%;
+    font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
+}
+
 body{
     background-color: white;
     color: black;
 }
 
 img {
-
-  /* Step 1: Define your square size */
   width: 300px;
   height: 300px;
-
   border-radius: 8px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
@@ -19,7 +26,6 @@ img {
 
 #showLoginForm {
     background: none;
-    border: none;
     padding: 0;
     margin: 0;
     cursor: pointer;
@@ -27,20 +33,27 @@ img {
 }
 
 #showLoginForm:hover {
-    opacity: 0.8;
+    filter: drop-shadow(4px 4px 8px #800000);    
+    opacity: 0.9;
     transform: scale(1.02);
     transition: all 0.2s ease;
 }
 
 #studentLoginForm {
+    border: 1px solid gray; 
+    color: white;
     display: none; 
     margin-top: 20px;
     padding: 20px;
-    border: 1px solid #ffffff;
     border-radius: 8px;
     width: 300px;
     background-color: #800000;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+input {
+  background-color: white; 
+  border: 1px solid gray; 
+  border-radius: 4px; 
 }
 
 #showAdminLoginForm {
@@ -53,20 +66,22 @@ img {
 }
 
 #showAdminLoginForm:hover {
-    opacity: 0.8;
+    filter: drop-shadow(4px 4px 8px #800000);    
+    opacity: 0.9;   
     transform: scale(1.02);
     transition: all 0.2s ease;
 }
 
 #adminLoginForm {
+    border: 1px solid gray; 
+    color: white;
     display: none; 
     margin-top: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
     border-radius: 8px;
     width: 300px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #800000;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .form-container {
