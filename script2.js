@@ -37,7 +37,7 @@ export const adminSignIn = async function(){
                     console.log(item.data());
                     console.log(user.uid)
                     if(user.uid == item.data().uid){
-                        localStorage.setItem('name', user.uid);
+                        localStorage.setItem('name', item.data().name);
                         if(item.data().admin == true){
                             localStorage.setItem('admin', true);
                             window.location.href = 'adminLogin.html';
@@ -62,7 +62,7 @@ export const studentSignIn = async function(){
             const user = userCredential.user;
             console.log('Signed in as:', user.email);
             localStorage.setItem('admin', false);
-            localStorage.setItem('name', user.uid);
+            localStorage.setItem('name', studentEmail);
             window.location.href = 'home.html';
         })
         .catch((error) => {
