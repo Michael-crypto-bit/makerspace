@@ -1,0 +1,54 @@
+// Import Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+// TODO: import libraries for Cloud Firestore Database
+// https://firebase.google.com/docs/firestore
+import {arrayRemove, serverTimestamp, deleteDoc, where, query, getFirestore, collection, addDoc, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+import {  getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+// Your web app's Firebase configuration
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCinc3NEqDVIxyM4fJ7P8CRo4xMAc1IaXg",
+  authDomain: "makerspace-18269.firebaseapp.com",
+  projectId: "makerspace-18269",
+  storageBucket: "makerspace-18269.firebasestorage.app",
+  messagingSenderId: "343570133102",
+  appId: "1:343570133102:web:5311039f12a0af24e8367f",
+  measurementId: "G-ME346D5CEX"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+    
+    window.onload = async function(){
+        localStorage.getItem
+    const incompleteQuery = query(collection(db, "users"));
+    const incompleteSnapshot = await getDocs(incompleteQuery);
+    const adminEmail = localStorage.getItem('e')
+    const password = localStorage.getItem('p');
+    signInWithEmailAndPassword(auth, adminEmail, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log('Signed in as:', user.email);
+                console.warn("firebase successfully read"); 
+                incompleteSnapshot.forEach((item) => {
+                    console.log(item.data());
+                    console.log(user.uid)
+                    if(user.uid == item.data().uid){
+                        localStorage.setItem('name', item.data().name);
+                        if(item.data().admin == true){
+                            localStorage.setItem('admin', true);
+                            window.location.href = 'adminLogin.html';
+                        }
+                        else{
+                            localStorage.setItem('admin', false);
+                            window.location.href = 'login.html';
+                        }
+                }});
+        })
+        .catch((error) => {
+            console.error('Sign in error:', error.message);
+        });
+    }

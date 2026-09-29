@@ -23,34 +23,11 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 export const adminSignIn = async function(){
-    const incompleteQuery = query(collection(db, "users"));
-    const incompleteSnapshot = await getDocs(incompleteQuery);
     const adminEmail = document.getElementById('adminEmail').value;
     const password = document.getElementById('aPassword').value;
-
-    signInWithEmailAndPassword(auth, adminEmail, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            console.log('Signed in as:', user.email);
-                console.warn("firebase successfully read"); 
-                incompleteSnapshot.forEach((item) => {
-                    console.log(item.data());
-                    console.log(user.uid)
-                    if(user.uid == item.data().uid){
-                        localStorage.setItem('name', item.data().name);
-                        if(item.data().admin == true){
-                            localStorage.setItem('admin', true);
-                            window.location.href = 'adminLogin.html';
-                        }
-                        else{
-                            localStorage.setItem('admin', false);
-                            window.location.href = 'login.html';
-                        }
-                }});
-        })
-        .catch((error) => {
-            console.error('Sign in error:', error.message);
-        });
+localStorage.setItem('e',adminEmail);
+localStorage.setItem('p',password); //little sketchy :)
+window.location.href = 'check.html';
 };
 
 export const studentSignIn = async function(){
