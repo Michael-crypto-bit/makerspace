@@ -22,13 +22,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export const showItems = async function(){
+  console.log(localStorage.getItem('name'))
+  document.getElementById("loggedin").innerHTML = localStorage.getItem('name');
  const itemsToDo = document.getElementById("output");
  itemsToDo.innerHTML = "";
 
  const incompleteQuery = query(collection(db, "makerspace"), where("completed", "==", false));
  const incompleteSnapshot = await getDocs(incompleteQuery);
  console.warn("firebase successfully read"); 
- console.info(incompleteQuery);
  incompleteSnapshot.forEach((item) => {
   const newPar = document.createElement("label");
   newPar.innerHTML = item.data().name;
@@ -51,14 +52,14 @@ export const showItems = async function(){
   if(item.data().inProgress == true || window.location.href.includes("adminLogin.html")){
       checkbox.innerHTML = "complete";
     checkbox.onclick = async function(){
-      await updateDoc(doc(db, "makerspace", item.id), {completed: true, inProgress: false, user: "Michael"});
+      await updateDoc(doc(db, "makerspace", item.id), {completed: true, inProgress: false, user: localStorage.getItem('name')});
       showItems();
     }
   }
   else{
     checkbox.innerHTML = "claim";
     checkbox.onclick = async function(){
-      await updateDoc(doc(db, "makerspace", item.id), {inProgress: true, user: "Michael"});
+      await updateDoc(doc(db, "makerspace", item.id), {inProgress: true, user: localStorage.getItem('name')});
       showItems();
     };
     }
