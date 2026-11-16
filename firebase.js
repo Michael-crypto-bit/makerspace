@@ -89,21 +89,12 @@ export const showItems = async function(){
   itemsToDo.appendChild(newPar4);
   itemsToDo.appendChild(newPar7);
   itemsToDo.appendChild(newPar6);
-  itemsToDo.appendChild(document.createElement("br"));itemsToDo.appendChild(document.createElement("br"));
+  itemsToDo.appendChild(document.createElement("hr"));itemsToDo.appendChild(document.createElement("br"));
   
 }
 );
 };
-export function punch(){
-    console.log("hi");
-    // var status = document.getElementById("statuş").innerText;
-    // if(status == "not punched in"){
-    //     document.getElementById("status").innerText = "punched in";
-    // }
-    // else{
-    //     document.getElementById("status").innerText = "not punched in";
-    // }
-}
+
 
 export const addItem = async function(item){
   const dropdown = document.getElementById("dropdown").value;
