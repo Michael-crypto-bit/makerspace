@@ -40,7 +40,7 @@ img {
 }
 
 #studentLoginForm {
-    border: 1px solid gray; 
+    border: 1px solid #5E5E5E; 
     color: white;
     display: none; 
     margin-top: 20px;
@@ -73,7 +73,7 @@ input {
 }
 
 #adminLoginForm {
-    border: 1px solid gray; 
+    border: 1px solid #5E5E5E; 
     color: white;
     display: none; 
     margin-top: 20px;
@@ -101,5 +101,34 @@ input {
   width: 320px;                      
 }
 
+#taskSection {
+    border: 3px solid #5E5E5E; 
+    color: black;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 75%;
+    background-color: #878787;
+}
+
+#activeTasks {
+    border: 3px solid #5E5E5E; 
+    color: black;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 75%;
+    background-color: #878787;
+}
+
+#activeTaskDetails {
+    border: 3px solid #5E5E5E; 
+    color: black;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 75%;
+    background-color: #D3D3D3;
+}
 
 
