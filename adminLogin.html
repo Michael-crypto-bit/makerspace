@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <script type="module">
@@ -30,22 +32,32 @@
 </style>
 <body><center>
     
+<center><header>Admin Dashboard</header></center>
+
+
 <a href="login.html" class="btn-nav">Login</a>
 <a href="home.html" class="btn-nav">Home</a>
-<h1>Admin Login</h1>
-<br>
-<br>
-<br>
-<h3>add task:</h3>
-<select id="dropdown">
-<option value="McAvoy">McAvoy</option>
-<option value="lasercutting">lasercutting</option>
-<option value="ornaments">ornaments</option>
-<option value="cleaning">cleaning</option>
-</select>
-<input type="text" id="input"><button onclick="addItem(document.getElementById('input').value)">add task</button>
-<h3>current tasks</h3>
-<p id="output"></p>
-    </center>
+
+
+
+<div id="taskSection">
+    <h3>Add Task:</h3>
+    <select id="dropdown">
+        <option value="" disabled selected hidden>Choose a Category...</option>
+        <option value="Laser Cutter">Laser Cutter</option>
+        <option value="Ornament Making">Ornament Making</option>
+        <option value="General Cleaning">General Cleaning</option>
+    </select>
+    <input type="text" id="input" placeholder="Enter the Task"><button onclick="addItem(document.getElementById('input').value)">Add Task</button>
+</div>
+
+<div id="activeTasks">
+    <h3>Currently Active Tasks:</h3>
+    <hr>
+    <div id="activeTaskDetails">
+        <p id="output"></p>
+    </div>
+</div>
+
 </body>
 </html>
