@@ -1,0 +1,5 @@
+This website uses hi-codes in the form of hi+ a 2 digit number instead of standard warnings generally here is a list(ones with *are currently unused):
+hi27 login has suceeded
+hi28 the punch in/out system has successfully run logging time to firebase
+*hi40 firebase reading failure
+hi60 the hours log for TAs has successfully started

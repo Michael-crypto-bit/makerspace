@@ -47,3 +47,23 @@ export function punch(){
     timestamp: serverTimestamp()
     
 });};
+  export function hours(uid){
+    console.log("hi60");
+    const items = [];
+    var total = 0;
+    incompleteSnapshot.forEach((item) => {
+      if(item.data().user == uid){
+      items.push(item.data().timestamp);
+      }
+    });
+    console.log(items);
+    items.sort((a, b) => a.toMillis() - b.toMillis());
+    console.log("2: "+items);
+    for(var i=0;i<items.length;i+=2){
+      console.log(i+": "+Math.round(items[i+1]-items[i]));
+      total += Math.round((items[i+1]-items[i]));
+    }
+    console.log("total"+total);
+    document.getElementById("hours").innerText = total;
+  }
+  hours(localStorage.getItem('name'));
