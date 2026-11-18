@@ -76,7 +76,7 @@ export const showItems = async function(){
     newPar6.htmlFor = item.id;
   }
   const newPar7 = document.createElement("label");
-  if(item.data().notes !=""){
+  if(item.data().notes !="" && item.data().notes != undefined){
     newPar7.innerHTML = "<br><br><strong> comments by claimer:</strong> <br>"+item.data().notes+"<br>";
     newPar7.htmlFor = item.id
   }
