@@ -7,7 +7,6 @@ if you take the api keys, good luck you have something that is basically worthle
 
 todo:                                                                                                                                                                 
 beautification                                                                                                                                                        
-punch in system                                                                                                                                                       
-little top right logged in status made to look beautifull and not just for the home page needs for admin page as well                                                 
+little top right logged in status made to look beautiful and not just for the home page needs for admin page as well                                                 
 login beautification                                                                                                                                                  
 login security                                                                                                                                                        
