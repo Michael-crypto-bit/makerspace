@@ -20,34 +20,38 @@ const incompleteQuery = query(collection(db, "punch-in"));
  const incompleteSnapshot = await getDocs(incompleteQuery);
  console.warn("firebase punchlist successfully read"); 
 
-export function punch(){
+export async function punch(){
     var status = document.getElementById("status").innerText;
     if(status == "not punched in"){
         document.getElementById("status").innerText = "punched in";
         var name = localStorage.getItem('name');
-        punch2(name, true);
+        punch2(name);
         console.warn("punched in "+name);
     }
     else{
         document.getElementById("status").innerText = "not punched in";
         var name = localStorage.getItem('name');
-        punch2(name, false);
+        punch2(name);
         console.warn("punched out "+name);
+        await hours(localStorage.getItem('name'));
+        window.location.reload();
     }
+    
 }
 
- async function punch2(name, inOrOut){
+ async function punch2(name){
     console.log("hi28");
   const docRef = await addDoc(collection(db, "punch-in"), {
     user: name,
-    inOrOut: inOrOut,
   });
   console.log("document written with ID: ",docRef.id);
   const updateTimestamp = await updateDoc(docRef, {
     timestamp: serverTimestamp()
     
 });};
-  export function hours(uid){
+  export async function hours(uid){
+  const incompleteQuery = query(collection(db, "punch-in"));
+ const incompleteSnapshot = await getDocs(incompleteQuery);
     console.log("hi60");
     const items = [];
     var total = 0;
@@ -61,9 +65,23 @@ export function punch(){
     console.log("2: "+items);
     for(var i=0;i<items.length;i+=2){
       console.log(i+": "+Math.round(items[i+1]-items[i]));
+      console.log(!Number.isNaN(Math.round((items[i+1]-items[i]))));
+      if(!Number.isNaN(Math.round((items[i+1]-items[i])))){
       total += Math.round((items[i+1]-items[i]));
+      };
     }
-    console.log("total"+total);
+    if(total > 3600 ){
+      document.getElementById("hoursHeader").innerText = "number of Hours";
+      total /= 3600;
+    }
+    else if(total > 60 ){
+      document.getElementById("hoursHeader").innerText = "number of MINUTES";
+      total = Math.round((total/60)*100)/100;
+    }
+    else{
+      document.getElementById("hoursHeader").innerText = "number of SECONDS";
+    }
+    console.log("total: "+total);
     document.getElementById("hours").innerText = total;
   }
   hours(localStorage.getItem('name'));
