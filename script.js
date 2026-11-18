@@ -3,7 +3,7 @@ window.onload = function() {
 
   console.log("hi27");
   if (window.location.href.includes("adminLogin.html")) {
-    console.log("jfnbjke"+localStorage.getItem('admin'));
+    // console.log("jfnbjke"+localStorage.getItem('admin'));
     if(localStorage.getItem('admin')!="true"){
       window.location.href = "login.html";
     }
