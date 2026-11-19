@@ -34,6 +34,7 @@
     import {punch, hours} from './punch.js';
     window.punch = punch;
     window.hours = hours;
+    hours(localStorage.getItem('name'));
   </script>
 <h4>user:</h4>
 <p id="loggedin"></p>
@@ -45,7 +46,7 @@
 <a href="login.html" class="btn-nav">Login</a>
       <!-- type must be "module": https://www.w3schools.com/js/js_modules.asp#:~:text=JavaScript%20modules%20allow%20you%20to,in%20the%20tag.-->  
     <br>
-    <h2>number of SECONDS</h2>
+    <h2 id="hoursHeader">number of SECONDS</h2>
     <p id="hours"></p>
     <br>
     <h2>punch in system</h2>

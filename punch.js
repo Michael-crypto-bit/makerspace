@@ -84,4 +84,4 @@ export async function punch(){
     console.log("total: "+total);
     document.getElementById("hours").innerText = total;
   }
-  hours(localStorage.getItem('name'));
+  
