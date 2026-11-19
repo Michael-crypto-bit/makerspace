@@ -4,11 +4,14 @@ window.onload = function() {
   console.log("hi27");
   if (window.location.href.includes("adminLogin.html")) {
     // console.log("jfnbjke"+localStorage.getItem('admin'));
-    if(localStorage.getItem('admin')!="true"){
+    const adminEmail = localStorage.getItem('e')
+    const password = localStorage.getItem('p');
+    if(localStorage.getItem('admin')!="true" || !password || !adminEmail){
       window.location.href = "login.html";
     }
 }
 };
+
 
 export const showWindow = async function(){
   const form = document.getElementById('studentLoginForm');
