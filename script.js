@@ -6,7 +6,7 @@ window.onload = function() {
     // console.log("jfnbjke"+localStorage.getItem('admin'));
     const adminEmail = localStorage.getItem('e')
     const password = localStorage.getItem('p');
-    if(localStorage.getItem('admin')!="true" || !password || !adminEmail){
+    if(localStorage.getItem('admin')!="true"){
       window.location.href = "login.html";
     }
 }
