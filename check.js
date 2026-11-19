@@ -28,10 +28,10 @@ const auth = getAuth(app);
     const incompleteSnapshot = await getDocs(incompleteQuery);
     const adminEmail = localStorage.getItem('e')
     const password = localStorage.getItem('p');
-    if(!password || !adminEmail){
-        localStorage.setItem('admin', false);
-        window.location.href = 'login.html';
-    }
+    // if(!password || !adminEmail){
+    //     localStorage.setItem('admin', false);
+    //     window.location.href = 'login.html';
+    // }
     signInWithEmailAndPassword(auth, adminEmail, password)
         .then((userCredential) => {
             const user = userCredential.user;
