@@ -24,7 +24,7 @@ const db = getFirestore(app);
 export const showItems = async function(){
   console.log(localStorage.getItem('name'))
   console.log("hi45")
-  if (window.location.href.includes("home.html")) {
+  if (window.location.href.includes("home")) {
     console.log("hi50");
   document.getElementById("loggedin").innerHTML = localStorage.getItem('name');
   }
