@@ -44,16 +44,16 @@ const auth = getAuth(app);
                         localStorage.setItem('name', item.data().name);
                         if(item.data().admin == true){
                             localStorage.setItem('admin', true);
-                            window.location.href = 'adminLogin.html';
+                            // window.location.href = 'adminLogin.html';
                         }
                         else{
                             localStorage.setItem('admin', false);
-                            window.location.href = 'login.html';
+                            // window.location.href = 'login.html';
                         }
                 }
                 else{
                     localStorage.setItem('admin', false);
-                    window.location.href = 'login.html';
+                    // window.location.href = 'login.html';
                 }
             });
         })
