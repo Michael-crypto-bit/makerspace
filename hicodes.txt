@@ -1,5 +1,6 @@
-This website uses hi-codes in the form of hi+ a 2 digit number instead of standard warnings generally here is a list(ones with *are currently unused):
-hi27 login has suceeded
+This website uses hi-codes in the form of hi+ a 2 digit number instead of standard notifications/error codes generally here is a list(ones with *are currently unused):
+hi27 page has loaded
 hi28 the punch in/out system has successfully run logging time to firebase
-*hi40 firebase reading failure
+hi45 show items function running
+hi50 displaying name
 hi60 the hours log for TAs has successfully started

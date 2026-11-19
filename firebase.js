@@ -117,3 +117,10 @@ export const addItem = async function(item){
   document.getElementById("input").value = "";
   showItems();
 }
+export function logout(){
+  localStorage.removeItem('name');
+  localStorage.removeItem('e');
+  localStorage.removeItem('p');
+  localStorage.setItem('admin',false);
+  window.location.href = 'login.html';
+}
