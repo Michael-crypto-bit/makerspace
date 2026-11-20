@@ -9,10 +9,9 @@
 </head>
 
 <script type="module">
-    import {addItem, showItems, logout} from './firebase.js';
+    import {addItem, showItems} from './firebase.js';
     window.addItem = addItem
     window.showItems = showItems
-    window.logout = logout
     showItems()
   </script>
 <script type="module" src="script.js"></script>
@@ -36,7 +35,7 @@
 <center><header>Admin Dashboard</header></center>
 
 
-<button onclick="logout()">Logout</button>
+<a href="login.html" class="btn-nav">Logout</a>
 <a href="home.html" class="btn-nav">View Student Screen</a>
 
 

@@ -23,9 +23,7 @@ const db = getFirestore(app);
 
 export const showItems = async function(){
   console.log(localStorage.getItem('name'))
-  console.log("hi45")
-  if (window.location.href.includes("home")) {
-    console.log("hi50");
+  if (window.location.href.includes("home.html")) {
   document.getElementById("loggedin").innerHTML = localStorage.getItem('name');
   }
  const itemsToDo = document.getElementById("output");
@@ -116,11 +114,4 @@ export const addItem = async function(item){
 // console.log("timesetamp: "+serverTimestamp());
   document.getElementById("input").value = "";
   showItems();
-}
-export function logout(){
-  localStorage.removeItem('name');
-  localStorage.removeItem('e');
-  localStorage.removeItem('p');
-  localStorage.setItem('admin',false);
-  window.location.href = 'login.html';
 }

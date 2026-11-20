@@ -131,4 +131,14 @@ input {
     background-color: #D3D3D3;
 }
 
+.loggedStatus {
+    display: flex;          
+    align-items: center;    
+    justify-content: flex-start; 
+    gap: 5px;              
+  }
 
+  .loggedStatus img {
+    width: 50px;            
+    height: auto;
+  }
