@@ -135,10 +135,24 @@ input {
     display: flex;          
     align-items: center;    
     justify-content: flex-start; 
-    gap: 5px;              
-  }
+    border: 1px solid #5E5E5E; 
+    padding-right: 3px;
+    color: black;
+    border-radius: 8px;
+    width: fit-content;
+    background-color: #D3D3D3;
+    font-size: clamp(0.6875rem, 1vw + 0.45rem, 0.8125rem);    
+    font-weight: 500;
+    height: 20px;
+    position: fixed; 
+    top: 20px;       
+    right: 20px;     
+    margin: 0;       
+    z-index: 1000;
+}       
+  
 
-  .loggedStatus img {
-    width: 50px;            
+.loggedStatus img {
+    width: 20px;            
     height: auto;
-  }
+}
